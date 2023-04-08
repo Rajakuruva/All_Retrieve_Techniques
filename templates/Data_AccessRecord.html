@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>AccessRecord Table</h1>
+        <table border="3px">
+            <tr>
+                <th>name</th>
+                <th>Author</th>
+                <th>Dates</th>
+            </tr>
+            {% for x in Access %}
+                <tr>
+                    <th>{{x.name}}</th>
+                    <th>{{x.Author}}</th>
+                    <th>{{x.Dates}}</th>
+                </tr>
+            {% endfor %}
+        </table>
+    </center>
+</body>
+</html>
