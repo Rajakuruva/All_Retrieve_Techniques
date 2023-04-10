@@ -22,4 +22,6 @@ urlpatterns = [
     path('Data_Topic/',Data_Topic,name='Data_Topic'),
     path('Data_Webpage/',Data_Webpage,name='Data_Webpage'),
     path('Data_AccessRecord/',Data_AccessRecord,name='Data_AccessRecord'),
+    path('Update_Webpage/',Update_Webpage,name='Update_Webpage'),
+    path('Update_or_create_Webpage/',Update_or_create_Webpage,name='Update_or_create_Webpage'),
 ]
