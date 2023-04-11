@@ -46,8 +46,8 @@ def Data_Webpage(request):
     tlo=Webpage.objects.filter(State__regex='[A-Za-z]{4}')
     tlo=Webpage.objects.filter(Q(Topic_name='Cricket') & Q(name='Dhoni'))
     tlo=Webpage.objects.filter(Q(State='Andhra pradesh') | Q(name='Rajasekhar'))
-    tlo=Webpage.objects.filter(Q(State='Chennai')| Q(State='Andhra pradesh'))
-    tlo=Webpage.objects.all()
+    #tlo=Webpage.objects.filter(Q(State='Chennai')| Q(State='Andhra pradesh'))
+    #tlo=Webpage.objects.all()
     d={'Web':tlo}
     return render(request,'Data_Webpage.html',d)
 
@@ -83,4 +83,10 @@ def Update_or_create_Webpage(request):
     to.save()
     Webpage.objects.update_or_create(name='Pravalika',defaults={'Topic_name':to,'State':'Ap','email':'Pravi12@gamil.com'})
     d={"Web":Webpage.objects.all()}
+    return render(request,'Data_Webpage.html',d)
+
+def Delete_Webpage(request):
+    #Webpage.objects.filter(name='Rajasekhar').delete()Specific_data Deleted
+    Webpage.objects.all().delete()
+    d={'Web':Webpage.objects.all()}
     return render(request,'Data_Webpage.html',d)
